@@ -17,9 +17,9 @@ db.categories.insertMany([
   },
 ]);
 
-db.createCollection("notifications");
+db.createCollection("channels");
 
-db.notifications.insertMany([
+db.channels.insertMany([
   {
     _id: ObjectId("63f25e72f829dd642581fc4b"),
     name: "SMS",
