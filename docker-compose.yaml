@@ -10,7 +10,6 @@ services:
       - ${MONGO_DB_PORT:-27017}:27017
     restart: always
   categories:
-    #image: category:latest
     build: back-end/services/categories/.
     container_name: categories
     environment:
@@ -23,3 +22,16 @@ services:
       - 3000:3000
     expose:
       - 3000
+  notifications:
+    build: back-end/services/notifications/.
+    container_name: notifications
+    environment:
+      - MONGO_DB_URL=mongodb://mongodb
+      - MONGO_DB_PORT=27017
+      - MONGO_DB_NAME=gila-sw-db
+    depends_on:
+      - mongo
+    ports:
+      - 3001:3001
+    expose:
+      - 3001
