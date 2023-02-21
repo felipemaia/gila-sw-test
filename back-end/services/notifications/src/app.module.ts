@@ -5,8 +5,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { CategorySchema } from './schemas/category.schema';
 import { UserSchema } from './schemas/user.schema';
 import { ChannelSchema } from './schemas/channel.schema';
+import { LogSchema } from './schemas/log.schema';
 import { ConfigModule } from '@nestjs/config';
-import { PushNotificationService } from './notification/push-notification/push-notification.service';
 
 @Module({
   imports: [
@@ -27,8 +27,9 @@ import { PushNotificationService } from './notification/push-notification/push-n
     MongooseModule.forFeature([{ name: 'Category', schema: CategorySchema }]),
     MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
     MongooseModule.forFeature([{ name: 'Channel', schema: ChannelSchema }]),
+    MongooseModule.forFeature([{ name: 'Log', schema: LogSchema }]),
   ],
   controllers: [AppController],
-  providers: [AppService, PushNotificationService],
+  providers: [AppService],
 })
 export class AppModule {}
