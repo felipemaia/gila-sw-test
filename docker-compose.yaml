@@ -35,3 +35,12 @@ services:
       - 3001:3001
     expose:
       - 3001
+  frontend:
+    build: front-end/.
+    container_name: frontend
+    depends_on:
+      - notifications
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
