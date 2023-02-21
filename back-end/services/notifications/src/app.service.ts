@@ -88,15 +88,15 @@ export class AppService {
 
   retrieveFullLog() {
     return this.logModel
-      .find({}, { _id: 0, updatedAt: 0, __v: 0 })
+      .find({}, { updatedAt: 0, __v: 0 })
       .sort({ createdAt: -1 });
   }
 
   sendEvent(): Observable<NotificationEvent> {
-    return interval(100).pipe(
+    return interval(500).pipe(
       map((_) => {
         if (this.lastUpdate.length > 0)
-          return { data: { message: this.lastUpdate[0] } };
+          return { data: { message: this.lastUpdate.shift() } };
         else return;
       }),
     );

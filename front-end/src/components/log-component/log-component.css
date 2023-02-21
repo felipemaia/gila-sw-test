@@ -1,0 +1,11 @@
+.p {
+  font-size: 10px;
+  margin: 0px;
+  width: 100%;
+  padding: 2px;
+}
+.log-component {
+  background-color: rgb(12, 172, 172);
+  border-radius: 7px;
+  margin-bottom: 5px;
+}

@@ -19,9 +19,9 @@ services:
     depends_on:
       - mongo
     ports:
-      - 3000:3000
+      - 3002:3002
     expose:
-      - 3000
+      - 3002
   notifications:
     build: back-end/services/notifications/.
     container_name: notifications
